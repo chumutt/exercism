@@ -1,0 +1,33 @@
+(import (rnrs))
+
+(define (divisible? n x)
+  (zero? (remainder n x)))
+
+(define (common-year? year)
+  (cond ((odd? (div year 4)) #t)
+        ((odd? (div year 100)) #t)
+        ((odd? (div year 400)) #t)
+        (else #f)))
+;; (define (common-year? year)
+;;   (if (not (leap-year? year))
+;;       #t
+;;       #f))
+
+(define (leap-year? year)
+  (cond ((even? (div year 4)) #t)
+        ((even? (div year 100)) #t)
+        ((even? (div year 400)) #t)
+        ((and (common-year? year) (not (divisible? year 4))) #t)
+        ((and (divisible? year 2)
+              (and (not (divisible? year 4)) (common-year? year))) #t)
+        ((and (divisible? year 4)
+              (and (not (divisible? year 100)) (leap-year? year))) #t)
+        ((and (divisible? year 4)
+              (and (divisible? year 5) (not (common-year? year)))) #t)
+        ;; ((and (even? (divisible? year 4))
+        ;;       (not (common-year? year))) #f)
+
+        ;; ((and (divisible? year 100)
+        ;;       (and (not (divisible? year 400))
+        ;;            (common-year? year))) #f)
+        (else #f)))
