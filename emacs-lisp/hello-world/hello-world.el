@@ -2,8 +2,10 @@
 
 ;;; Commentary:
 
+;;; Code:
 (defun hello ()
-  "Goodbye, Mars!")
+  "Prints 'Hello, World'."
+  (print "Hello, World!"))
 
 (provide 'hello-world)
 ;;; hello-world.el ends here
