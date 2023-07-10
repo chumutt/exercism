@@ -4,9 +4,11 @@
 
 ** Download
 
+I use https://github.com/prasxanth/exercism-track-downloader.
+
 #+begin_src sh :shebang "#!/usr/bin/env sh"
 java -jar \
-    /home/chu/.local/bin/exercism-track-downloader.jar \
+    $HOME/.local/bin/exercism-track-downloader.jar \
         exercises \
             -d bash \
             -d common-lisp \
