@@ -1,8 +1,6 @@
 #+title: Readme
 
-* Readme
-
-** Download
+* Download
 
 I use https://github.com/prasxanth/exercism-track-downloader.
 
