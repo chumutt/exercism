@@ -1,12 +1,7 @@
-default rel
-
-section .rodata
-msg: db "Hello, World!", 0
-
 section .text
-global hello
-hello:
-    lea rax, [msg]
+global square_root
+square_root:
+    ; Provide your implementation here
     ret
 
 %ifidn __OUTPUT_FORMAT__,elf64
